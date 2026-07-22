@@ -4088,28 +4088,6 @@ a.button.do.w-button:hover {
 
 .lps-form_content-left .lps-stats_item{align-items:center !important;text-align:center !important;}
 .lps-form_content-left .lps-stats_desc{margin-left:auto !important;margin-right:auto !important;}
-
-/* ===== Tooltip de siglas (gt-term), igual GT ===== */
-.gt-term{position:relative;display:inline-block;font:inherit;color:inherit;background:none;border:none;padding:0;margin:0;border-bottom:1px dotted currentColor;cursor:help;}
-.gt-term_bubble{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);width:max-content;max-width:240px;background:#12193D;color:#fff;font-size:0.8125rem;font-weight:500;line-height:1.45;text-align:left;padding:0.6rem 0.85rem;border-radius:10px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease, transform .15s ease;z-index:5;}
-.gt-term_bubble::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#12193D;}
-.gt-term:hover .gt-term_bubble,.gt-term:focus-visible .gt-term_bubble,.gt-term:focus .gt-term_bubble{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
-/* diferencial box menor */
-.div-block-83 .heading-14{font-size:1.15rem !important;}
-.div-block-83 .text-block-65{font-size:0.92rem !important;line-height:1.55 !important;}
-/* investimento: textos centralizados */
-.gt-custo_card{text-align:center;}
-.gt-custo_card .gt-custo_list li{justify-content:center;}
-
-/* ===== CEO quote no formato gt-ceo (igual GT) ===== */
-.gt-ceo{padding:28px 24px;}
-.gt-ceo_inner{display:grid;grid-template-columns:auto 1fr;gap:0 24px;align-items:start;max-width:700px;margin:0 auto;padding:20px 28px;}
-.gt-ceo_mark{font-family:Georgia,"Times New Roman",serif;font-size:6.5rem;line-height:0.6;color:#2FCC64;font-weight:700;transform:translateY(0.28em);user-select:none;}
-.gt-ceo_text{font-size:1.5rem;font-style:italic;font-weight:600;color:#12193D;line-height:1.45;letter-spacing:0.005em;margin:0 0 0.6rem;max-width:36ch;}
-.gt-ceo_sub{font-size:1rem;color:#4a5062;line-height:1.6;margin:0 0 0.6rem;max-width:44ch;}
-.gt-ceo_role{display:flex;align-items:center;gap:10px;font-size:0.8125rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#12193D;}
-.gt-ceo_role::before{content:'';width:20px;height:2px;background:#2FCC64;border-radius:2px;display:inline-block;}
-@media(max-width:600px){.gt-ceo{padding:20px 20px;}.gt-ceo_inner{grid-template-columns:1fr;gap:4px;padding:20px;}.gt-ceo_mark{font-size:4.5rem;}.gt-ceo_text{font-size:1.25rem;}}
 </style>
 
 <!-- Lenis e GSAP removidos a pedido do Edilio (11/06/2026): o efeito de rolagem borrava as letras -->
@@ -4432,14 +4410,14 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                   <select name="StatusUK" class="lps-form_input w-select" data-lang="pt" required>
                     <option value="">Selecione</option>
                     <option value="Cidadao">Cidadão britânico</option>
-                    <option value="<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>">Residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) ou Settled Status</option>
+                    <option value="ILR">Residência permanente (ILR) ou Settled Status</option>
                     <option value="Visto">Visto de trabalho ou estudo</option>
                     <option value="Ninguem">Ainda ninguém</option>
                   </select>
                   <select name="StatusUKEn" class="lps-form_input w-select" lang="en" data-lang="en" required>
                     <option value="">Select</option>
                     <option value="Cidadao">British citizen</option>
-                    <option value="<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>">Permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) or Settled Status</option>
+                    <option value="ILR">Permanent residence (ILR) or Settled Status</option>
                     <option value="Visto">Work or study visa</option>
                     <option value="Ninguem">No one yet</option>
                   </select>
@@ -4570,7 +4548,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
   <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
     <div class="container-large">
       <div class="lps-benefits_header" data-gsap="fade-up">
-        <div class="tag">
+        <div data-wf--ui-lps-tag--variant="transparent" class="tag">
           <div class="tag_dot"></div>
           <div class="tag_text" data-lang-inline="pt">POR QUE REUNIR AGORA</div>
           <div class="tag_text" lang="en" data-lang-inline="en">WHY REUNITE NOW</div>
@@ -4606,8 +4584,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           <div class="div-block-79" style="padding:24px;">
             <h3 class="heading-style-h5" data-lang="pt">Cada um com os seus próprios direitos</h3>
             <h3 class="heading-style-h5" lang="en" data-lang="en">Each one with their own rights</h3>
-            <p class="text-size-regular" data-lang="pt">Quem chega pode trabalhar, estudar e construir a própria rotina no país. <strong>O cônjuge trabalha sem limite de horas, e as crianças entram na escola e no <button type="button" class="gt-term">NHS<span class="gt-term_bubble" role="tooltip">National Health Service, o sistema público de saúde do Reino Unido</span></button>.</strong></p>
-            <p class="text-size-regular" lang="en" data-lang="en">Those who arrive can work, study, and build their own routine in the country. <strong>The spouse works with no limit on hours, and the children join school and the <button type="button" class="gt-term">NHS<span class="gt-term_bubble" role="tooltip">National Health Service, o sistema público de saúde do Reino Unido</span></button>.</strong></p>
+            <p class="text-size-regular" data-lang="pt">Quem chega pode trabalhar, estudar e construir a própria rotina no país. <strong>O cônjuge trabalha sem limite de horas, e as crianças entram na escola e no NHS.</strong></p>
+            <p class="text-size-regular" lang="en" data-lang="en">Those who arrive can work, study, and build their own routine in the country. <strong>The spouse works with no limit on hours, and the children join school and the NHS.</strong></p>
           </div>
         </div>
 
@@ -4620,13 +4598,13 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           <div class="div-block-79" style="padding:24px;">
             <h3 class="heading-style-h5" data-lang="pt">Um caminho que termina em segurança</h3>
             <h3 class="heading-style-h5" lang="en" data-lang="en">A path that ends in security</h3>
-            <p class="text-size-regular" data-lang="pt">A reunião não é um arranjo temporário. <strong>É o primeiro passo de um caminho com prazo e direção</strong>, que leva à residência permanente e, depois, à possibilidade da <span style="background:#004DFF;color:#fff;padding:1px 6px;border-radius:4px;">cidadania britânica</span>.</p>
-            <p class="text-size-regular" lang="en" data-lang="en">Reunion is not a temporary arrangement. <strong>It is the first step on a path with a timeline and a direction</strong>, leading to permanent residence and, later, the possibility of <span class="gt-hl">British citizenship</span>.</p>
+            <p class="text-size-regular" data-lang="pt">A reunião não é um arranjo temporário. <strong>É o primeiro passo de um caminho com prazo e direção</strong>, que leva à residência permanente e, depois, à possibilidade da cidadania britânica.</p>
+            <p class="text-size-regular" lang="en" data-lang="en">Reunion is not a temporary arrangement. <strong>It is the first step on a path with a timeline and a direction</strong>, leading to permanent residence and, later, the possibility of British citizenship.</p>
           </div>
         </div>
 
       </div>
-      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px;text-align:center;align-items:center;margin-left:auto;margin-right:auto;">
+      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px">
         <p class="text-size-medium" data-lang="pt">A maioria trata renda mínima, provas do relacionamento e prazos como tarefas soltas. <strong>A Amorim trata tudo como uma decisão só, do começo ao fim, porque é um <span class="gt-hl">hub 360º</span>.</strong></p>
         <p class="text-size-medium" lang="en" data-lang="en">Most treat the minimum income, the relationship evidence, and deadlines as loose tasks. <strong>Amorim treats it all as a single decision, from start to finish, because it is a <span class="gt-hl">360º hub</span>.</strong></p>
       </div>
@@ -4640,7 +4618,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
      Imagens: placeholders .webp, trocar pelas fotos definitivas do shot list
 ════════════════════════════════════════ -->
 <style>
-.vidauk-section{background:oklch(95.5% 0.02 255);}
+.vidauk-section{background:#FFFFFF;}
 .vidauk-section .tag_text{color:#12193D;}
 .vidauk-section .heading-style-h2{color:#12193D;}
 .vidauk-section .living_header p{color:#4a5062;}
@@ -4670,7 +4648,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 ════════════════════════════════════════ -->
 <style>
 .gt-oque{background:oklch(95.5% 0.02 255);}
-.gt-oque_inner{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;padding:96px 0;}
+.gt-oque_inner{max-width:1180px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:start;}
 .gt-oque_text .tag_text{color:#004DFF !important;}
 .gt-oque_text h2{color:#12193D !important;margin:18px 0 0;}
 .gt-oque_text p{color:#4a5062 !important;font-size:1.08rem;line-height:1.7;font-weight:400;margin:18px 0 0;}
@@ -4679,9 +4657,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 @media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;padding:64px 20px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
 </style>
 <div class="gt-oque">
-  <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
-    <div class="container-large">
-      <div class="gt-oque_inner">
+  <div class="gt-oque_inner">
     <div class="gt-oque_text" data-gsap="fade-up">
       <div class="tag">
         <div class="tag_dot"></div>
@@ -4693,16 +4669,14 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
       <h2 class="heading-style-h2" lang="en" data-lang="en">What is the UK Family Visa?</h2>
       <p data-lang="pt">O UK Family Visa é a rota britânica que reúne o casal ou a família no Reino Unido. Um lado do casal patrocina, o outro recebe o visto para viver, trabalhar e estudar no país.</p>
       <p lang="en" data-lang="en">The UK Family Visa is the British route that reunites a couple or a family in the United Kingdom. One partner sponsors, the other receives the visa to live, work, and study in the country.</p>
-      <p data-lang="pt">Quem já mora no país como cidadão britânico, titular de residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) ou de Settled Status (<button type="button" class="gt-term">EUSS<span class="gt-term_bubble" role="tooltip">EU Settlement Scheme, o status de residência de europeus no Reino Unido</span></button>) pode patrocinar a vinda do parceiro ou dos filhos. O pedido se apoia em duas bases: a prova de que o relacionamento é real e contínuo, e a comprovação da renda mínima de quem patrocina, hoje a partir de £29.000 por ano, por salário, trabalho autônomo, poupança ou uma combinação.</p>
-      <p lang="en" data-lang="en">Those already in the country as British citizens, holders of permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) or Settled Status (<button type="button" class="gt-term">EUSS<span class="gt-term_bubble" role="tooltip">EU Settlement Scheme, o status de residência de europeus no Reino Unido</span></button>) can sponsor a partner or children. The application rests on two pillars: proof that the relationship is genuine and ongoing, and evidence of the sponsor's minimum income, currently from £29,000 a year, through salary, self-employment, savings, or a combination.</p>
-      <p data-lang="pt">Aprovado, o parceiro ou filho passa a viver, trabalhar e estudar no Reino Unido. A partir daí começa um caminho com data e direção: renovação, residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) e, depois, a possibilidade da <span class="gt-hl">cidadania britânica</span>.</p>
-      <p lang="en" data-lang="en">Once approved, your partner or child lives, works, and studies in the United Kingdom. From there a path with a timeline and a direction begins: extension, permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>), and later the possibility of <span class="gt-hl">British citizenship</span>.</p>
+      <p data-lang="pt">Quem já mora no país como cidadão britânico, titular de residência permanente (ILR) ou de Settled Status (EUSS) pode patrocinar a vinda do parceiro ou dos filhos. O pedido se apoia em duas bases: a prova de que o relacionamento é real e contínuo, e a comprovação da renda mínima de quem patrocina, hoje a partir de £29.000 por ano, por salário, trabalho autônomo, poupança ou uma combinação.</p>
+      <p lang="en" data-lang="en">Those already in the country as British citizens, holders of permanent residence (ILR) or Settled Status (EUSS) can sponsor a partner or children. The application rests on two pillars: proof that the relationship is genuine and ongoing, and evidence of the sponsor's minimum income, currently from £29,000 a year, through salary, self-employment, savings, or a combination.</p>
+      <p data-lang="pt">Aprovado, o parceiro ou filho passa a viver, trabalhar e estudar no Reino Unido. A partir daí começa um caminho com data e direção: renovação, residência permanente (ILR) e, depois, a possibilidade da cidadania britânica.</p>
+      <p lang="en" data-lang="en">Once approved, your partner or child lives, works, and studies in the United Kingdom. From there a path with a timeline and a direction begins: extension, permanent residence (ILR), and later the possibility of British citizenship.</p>
     </div>
     <!-- PLACEHOLDER: trocar pela foto definitiva do Reino Unido -->
     <div class="gt-oque_media" data-gsap="fade-up">
       <img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=1100&q=80" alt="PLACEHOLDER: familia reunida no Reino Unido" loading="lazy"/>
-    </div>
-      </div>
     </div>
   </div>
 </div>
@@ -4730,8 +4704,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           <h2 class="heading-style-h2" lang="en" data-lang="en">Which of these situations<br>is yours?</h2>
         </div>
         <div class="lps-pathways-v2_header-right">
-          <p class="text-size-medium lps-pathways-v2_sub" data-lang="pt"><span class="gt-hl-line">Você não precisa ter todos os documentos prontos para começar.</span> É sobre organizar a prova do relacionamento e a renda do jeito que o Reino Unido solicita, para o pedido se sustentar diante do avaliador.</p>
-          <p class="text-size-medium lps-pathways-v2_sub" lang="en" data-lang="en"><span class="gt-hl-line">You do not need every document ready to begin.</span> It is about organizing the relationship evidence and the income the way the United Kingdom asks, so the application holds up before the caseworker.</p>
+          <p class="text-size-medium lps-pathways-v2_sub" data-lang="pt">Você não precisa ter todos os documentos prontos para começar. É sobre organizar a prova do relacionamento e a renda do jeito que o Reino Unido solicita, para o pedido se sustentar diante do avaliador.</p>
+          <p class="text-size-medium lps-pathways-v2_sub" lang="en" data-lang="en">You do not need every document ready to begin. It is about organizing the relationship evidence and the income the way the United Kingdom asks, so the application holds up before the caseworker.</p>
         </div>
       </div>
 
@@ -4911,7 +4885,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 
       <!-- Vídeo do especialista, molde COMO FUNCIONA da LP Alemanha: header no topo + thumbnail largura total. CONFIRMAR rótulo e gravar vídeo definitivo -->
       <style>
-      .gt-video{grid-column:1 / -1;margin-top:64px;background:#F7F8FF;border-radius:24px;padding:56px 32px;}
+      .gt-video{grid-column:1 / -1;margin-top:64px;}
       .gt-video_top{max-width:780px;margin:0 auto 36px;text-align:center;}
       .gt-video_top .tag{margin-left:auto;margin-right:auto;}
       .gt-video_top .tag_text{color:#004DFF !important;}
@@ -4924,7 +4898,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
       .gt-video_thumb-icon .gv-btn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;transition:transform .2s ease;}
       .gt-video_thumb:hover .gv-btn{transform:scale(1.06);}
       .gt-video_thumb-icon .gv-cap{color:rgba(255,255,255,.85);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
-      @media(max-width:600px){.gt-video_thumb-icon .gv-btn{width:64px;height:64px;}.gt-video{padding:36px 20px;border-radius:16px;}}
+      @media(max-width:600px){.gt-video_thumb-icon .gv-btn{width:64px;height:64px;}}
       </style>
       <div class="gt-video">
         <div class="gt-video_top" data-gsap="fade-up">
@@ -5162,8 +5136,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               <div class="feature-item_info">
                 <p class="text-size-medium text-weight-bold" data-lang="pt">Renda, relacionamento e jornada, sob o mesmo teto</p>
                 <p class="text-size-medium text-weight-bold" lang="en" data-lang="en">Income, relationship, and journey, under one roof</p>
-                <p class="text-size-regular" data-lang="pt">Você não precisa coordenar tudo por conta própria. A Amorim conecta os três trilhos para que nada caia entre eles: a renda mínima, as provas do relacionamento e a jornada até o <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>, mapeados antes de você dar entrada.</p>
-                <p class="text-size-regular" lang="en" data-lang="en">You don't have to coordinate everything on your own. Amorim connects the three tracks so nothing falls between them: the minimum income, the relationship evidence, and the journey to <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>, all mapped before you apply.</p>
+                <p class="text-size-regular" data-lang="pt">Você não precisa coordenar tudo por conta própria. A Amorim conecta os três trilhos para que nada caia entre eles: a renda mínima, as provas do relacionamento e a jornada até o ILR, mapeados antes de você dar entrada.</p>
+                <p class="text-size-regular" lang="en" data-lang="en">You don't have to coordinate everything on your own. Amorim connects the three tracks so nothing falls between them: the minimum income, the relationship evidence, and the journey to ILR, all mapped before you apply.</p>
               </div>
             </div>
           </div>
@@ -5178,21 +5152,30 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 </div>
 
 <!-- ════════════════════════════════════════
-     CITAÇÃO CEO, Giselle Amorim (formato gt-ceo do GT)
+     CITAÇÃO CEO, Giselle Amorim (abaixo do hub 360)
 ════════════════════════════════════════ -->
-<div class="gt-ceo">
-  <div class="gt-ceo_inner" data-gsap="fade-up">
-    <div class="gt-ceo_mark" aria-hidden="true">&ldquo;</div>
-    <div class="gt-ceo_body">
-      <p class="gt-ceo_text" data-lang="pt">Cada pessoa que nos procura carrega um sonho que não cabe em um formulário.</p>
-      <p class="gt-ceo_text" lang="en" data-lang="en">Every person who comes to us carries a dream that no form can contain.</p>
-      <p class="gt-ceo_sub" data-lang="pt">Nossa diferença começa quando paramos de vender serviços e começamos a entender histórias.</p>
-      <p class="gt-ceo_sub" lang="en" data-lang="en">Our difference starts when we stop selling services and start understanding stories.</p>
-      <p class="gt-ceo_role" data-lang="pt">Giselle Amorim, CEO</p>
-      <p class="gt-ceo_role" lang="en" data-lang="en">Giselle Amorim, CEO</p>
+<div class="section_lps-single-testimonial">
+  <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
+    <div class="container-small-copy2">
+      <div class="lps-single-testimonial_content-copy2 lps-ceo-quote">
+        <div class="lps-ceo-quote_mark" aria-hidden="true">"</div>
+        <h2 class="heading-style-h4 lps-ceo-quote_text" data-lang="pt">Cada pessoa que nos procura carrega um sonho que não cabe em um formulário.</h2>
+        <h2 class="heading-style-h4 lps-ceo-quote_text" lang="en" data-lang="en">Every person who comes to us carries a dream that no form can contain.</h2>
+        <p class="lps-ceo-quote_sub" data-lang="pt">Nossa diferença começa quando paramos de vender serviços e começamos a entender histórias.</p>
+        <p class="lps-ceo-quote_sub" lang="en" data-lang="en">Our difference starts when we stop selling services and start understanding stories.</p>
+        <div class="lps-single-testimonial_client">
+          <div class="lps-single-testimonial_client-info">
+            <div class="text-size-medium text-weight-bold"><strong>Giselle Amorim</strong></div>
+            <div class="lps-ceo-quote_role" data-lang="pt">CEO, Amorim Global</div>
+            <div class="lps-ceo-quote_role" lang="en" data-lang="en">CEO, Amorim Global</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <img loading="lazy" src="https://cdn.prod.website-files.com/669b5fced1bf20317562ea9d/69121320471ae07098a1250f_line-8.svg" alt="" class="lps-single-testimonial_svg"/>
 </div>
+
 
 <!-- ════════════════════════════════════════
      RISCOS E COMO A AMORIM REDUZ, BLOCO 8
@@ -5237,8 +5220,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
     <div class="gt-riscos_refusal" data-gsap="fade-up">
       <h3 data-lang="pt">E se o pedido for recusado?</h3>
       <h3 lang="en" data-lang="en">And if the application is refused?</h3>
-      <p data-lang="pt">A recusa costuma chegar sem aviso, e as taxas pagas (visto e <button type="button" class="gt-term">IHS<span class="gt-term_bubble" role="tooltip">Immigration Health Surcharge, a taxa que dá acesso ao sistema de saúde</span></button>) não voltam. Em alguns casos cabe recurso ao tribunal britânico pelo direito à vida familiar (Artigo 8), em outros o caminho é um novo pedido. Por isso preparamos a renda, as provas e os prazos para o pedido chegar forte à decisão, logo na primeira vez.</p>
-      <p lang="en" data-lang="en">A refusal usually arrives with no warning, and the fees paid (visa and <button type="button" class="gt-term">IHS<span class="gt-term_bubble" role="tooltip">Immigration Health Surcharge, a taxa que dá acesso ao sistema de saúde</span></button>) are not refunded. In some cases there is a right of appeal to the UK tribunal on the right to family life (Article 8), in others the path is a fresh application. That is why we prepare the income, the evidence, and the deadlines so the application reaches the decision strong, right the first time.</p>
+      <p data-lang="pt">A recusa costuma chegar sem aviso, e as taxas pagas (visto e IHS) não voltam. Em alguns casos cabe recurso ao tribunal britânico pelo direito à vida familiar (Artigo 8), em outros o caminho é um novo pedido. Por isso preparamos a renda, as provas e os prazos para o pedido chegar forte à decisão, logo na primeira vez.</p>
+      <p lang="en" data-lang="en">A refusal usually arrives with no warning, and the fees paid (visa and IHS) are not refunded. In some cases there is a right of appeal to the UK tribunal on the right to family life (Article 8), in others the path is a fresh application. That is why we prepare the income, the evidence, and the deadlines so the application reaches the decision strong, right the first time.</p>
     </div>
 
     <table class="gt-riscos_table" data-gsap="fade-up">
@@ -5314,8 +5297,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           </div>
           <h2 class="heading-style-h2" data-lang="pt">O que muda quando vocês finalmente se reúnem</h2>
           <h2 class="heading-style-h2" lang="en" data-lang="en">What changes when you are finally together</h2>
-          <p class="text-size-medium" data-lang="pt"><span class="gt-hl" style="background:#2FCC64;color:#12193D;">Vocês conseguiram.</span> O visto aprovado é o fim da distância e o começo de uma vida no mesmo lugar. A partir daqui, a reunião deixa de ser plano e vira a rotina mais esperada: a de estar junto.</p>
-          <p class="text-size-medium" lang="en" data-lang="en"><span class="gt-hl" style="background:#2FCC64;color:#12193D;">You made it.</span> The approved visa is the end of the distance and the start of a life in the same place. From here, the reunion stops being a plan and becomes the most awaited routine: being together.</p>
+          <p class="text-size-medium" data-lang="pt">Vocês conseguiram. O visto aprovado é o fim da distância e o começo de uma vida no mesmo lugar. A partir daqui, a reunião deixa de ser plano e vira a rotina mais esperada: a de estar junto.</p>
+          <p class="text-size-medium" lang="en" data-lang="en">You made it. The approved visa is the end of the distance and the start of a life in the same place. From here, the reunion stops being a plan and becomes the most awaited routine: being together.</p>
         </div>
 
         <div class="gt-after_carousel">
@@ -5477,7 +5460,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
             <p lang="en" data-lang="en">These are paid directly to the United Kingdom and apply to any application, with or without a consultancy. The main ones are:</p>
             <ul class="gt-custo_list">
               <li><i class="ph ph-check"></i><span data-lang-inline="pt">Pedido do visto (fora do Reino Unido): cerca de £1.846 por pessoa</span><span lang="en" data-lang-inline="en">Visa application (outside the UK): around £1,846 per person</span></li>
-              <li><i class="ph ph-check"></i><span data-lang-inline="pt">Sobretaxa de saúde (<button type="button" class="gt-term">IHS<span class="gt-term_bubble" role="tooltip">Immigration Health Surcharge, a taxa que dá acesso ao sistema de saúde</span></button>): £1.035 por ano por adulto e £776 por menor, paga na entrada</span><span lang="en" data-lang-inline="en">Health surcharge (<button type="button" class="gt-term">IHS<span class="gt-term_bubble" role="tooltip">Immigration Health Surcharge, a taxa que dá acesso ao sistema de saúde</span></button>): £1,035 a year per adult and £776 per child, paid on entry</span></li>
+              <li><i class="ph ph-check"></i><span data-lang-inline="pt">Sobretaxa de saúde (IHS): £1.035 por ano por adulto e £776 por menor, paga na entrada</span><span lang="en" data-lang-inline="en">Health surcharge (IHS): £1,035 a year per adult and £776 per child, paid on entry</span></li>
               <li><i class="ph ph-check"></i><span data-lang-inline="pt">Biometria e taxas administrativas, quando aplicáveis</span><span lang="en" data-lang-inline="en">Biometrics and administrative fees, where applicable</span></li>
             </ul>
             <p class="gt-custo_note" data-lang="pt">São pagas por pessoa e, em geral, antecipadamente no momento da aplicação, não diluídas ao longo dos anos. Mapeamos cada uma com você, com antecedência, para que não haja surpresa. Valores oficiais do governo britânico, sujeitos a atualização.</p>
@@ -5494,7 +5477,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
             <p lang="en" data-lang="en">This is the fee for handling your full case, from the income strategy to the family's reunion. Since every case is unique, we set the fee once we understand your scenario.</p>
             <ul class="gt-custo_list">
               <li><i class="ph ph-check"></i><span data-lang-inline="pt">Estratégia da renda mínima e montagem das provas do relacionamento</span><span lang="en" data-lang-inline="en">Minimum income strategy and building the relationship evidence</span></li>
-              <li><i class="ph ph-check"></i><span data-lang-inline="pt">Renda, documentos, prazos e a jornada até o <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button> em um único calendário</span><span lang="en" data-lang-inline="en">Income, documents, deadlines, and the journey to <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button> on a single calendar</span></li>
+              <li><i class="ph ph-check"></i><span data-lang-inline="pt">Renda, documentos, prazos e a jornada até o ILR em um único calendário</span><span lang="en" data-lang-inline="en">Income, documents, deadlines, and the journey to ILR on a single calendar</span></li>
               <li><i class="ph ph-check"></i><span data-lang-inline="pt">Atendimento dedicado em português e inglês, do começo ao fim</span><span lang="en" data-lang-inline="en">Dedicated support in Portuguese and English, from start to finish</span></li>
             </ul>
             <p class="gt-custo_note" data-lang="pt">Você recebe o quadro de investimento completo na primeira conversa, antes de qualquer compromisso.</p>
@@ -5513,8 +5496,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 
 
 <!-- ════════════════════════════════════════
-     JORNADA ATE O <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button> (BLOCO DEDICADO RF, aprovado pelo Pedro)
-     Lifecycle do visto: entrada > <button type="button" class="gt-term">FLR<span class="gt-term_bubble" role="tooltip">Further Leave to Remain, a renovação do visto</span></button> > <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button> > cidadania. Mata a sensacao de caos.
+     JORNADA ATE O ILR (BLOCO DEDICADO RF, aprovado pelo Pedro)
+     Lifecycle do visto: entrada > FLR > ILR > cidadania. Mata a sensacao de caos.
 ════════════════════════════════════════ -->
 <style>
 .rf-jornada{background:#fff;}
@@ -5588,8 +5571,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
         <span class="rf-jornada_time" data-lang-inline="pt">Em geral 12 meses depois</span><span class="rf-jornada_time" lang="en" data-lang-inline="en">Usually 12 months later</span>
         <h3 data-lang="pt">Naturalização</h3>
         <h3 lang="en" data-lang="en">Naturalization</h3>
-        <p data-lang="pt">Em geral um ano após o <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>, abre-se a porta da cidadania britânica e do passaporte, fechando o caminho que começou na reunião.</p>
-        <p lang="en" data-lang="en">Usually a year after <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>, the door to British citizenship and a passport opens, closing the path that began with the reunion.</p>
+        <p data-lang="pt">Em geral um ano após o ILR, abre-se a porta da cidadania britânica e do passaporte, fechando o caminho que começou na reunião.</p>
+        <p lang="en" data-lang="en">Usually a year after ILR, the door to British citizenship and a passport opens, closing the path that began with the reunion.</p>
       </div>
     </div>
 
@@ -5737,8 +5720,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                     <p class="text-size-medium lps-timeline-final" data-lang="pt">Renovação, residência permanente e cidadania</p>
                     <p class="text-size-medium lps-timeline-final" lang="en" data-lang="en">Extension, settlement and citizenship</p>
                     <div class="lps-timeline_card-desc">
-                      <p data-lang="pt">A vida em família começa, e a Amorim segue ao seu lado na renovação do visto e no caminho até a residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) e a cidadania, avisando cada prazo com antecedência.</p>
-                      <p lang="en" data-lang="en">Family life begins, and Amorim stays by your side through the visa extension and the path to permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) and citizenship, flagging every deadline well ahead.</p>
+                      <p data-lang="pt">A vida em família começa, e a Amorim segue ao seu lado na renovação do visto e no caminho até a residência permanente (ILR) e a cidadania, avisando cada prazo com antecedência.</p>
+                      <p lang="en" data-lang="en">Family life begins, and Amorim stays by your side through the visa extension and the path to permanent residence (ILR) and citizenship, flagging every deadline well ahead.</p>
                     </div>
                   </div>
                 </div>
@@ -6274,8 +6257,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               </div>
               <div class="faq6_answer">
                 <div class="margin-bottom margin-small"><div class="max-width-large">
-                  <p class="text-size-regular" data-lang="pt">Em geral, cidadão britânico, titular de residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) ou de Settled Status (<button type="button" class="gt-term">EUSS<span class="gt-term_bubble" role="tooltip">EU Settlement Scheme, o status de residência de europeus no Reino Unido</span></button>). Em alguns casos, titulares de outros vistos também podem patrocinar. Na primeira conversa confirmamos se a sua situação serve como patrocínio.</p>
-                  <p class="text-size-regular" lang="en" data-lang="en">Usually a British citizen, a holder of permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>) or of Settled Status (<button type="button" class="gt-term">EUSS<span class="gt-term_bubble" role="tooltip">EU Settlement Scheme, o status de residência de europeus no Reino Unido</span></button>). In some cases, holders of other visas can also sponsor. In our first conversation we confirm whether your status works as sponsorship.</p>
+                  <p class="text-size-regular" data-lang="pt">Em geral, cidadão britânico, titular de residência permanente (ILR) ou de Settled Status (EUSS). Em alguns casos, titulares de outros vistos também podem patrocinar. Na primeira conversa confirmamos se a sua situação serve como patrocínio.</p>
+                  <p class="text-size-regular" lang="en" data-lang="en">Usually a British citizen, a holder of permanent residence (ILR) or of Settled Status (EUSS). In some cases, holders of other visas can also sponsor. In our first conversation we confirm whether your status works as sponsorship.</p>
                 </div></div>
               </div>
             </div>
@@ -6414,8 +6397,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               </div>
               <div class="faq6_answer">
                 <div class="margin-bottom margin-small"><div class="max-width-large">
-                  <p class="text-size-regular" data-lang="pt">Sim. Para o parceiro de cidadão britânico, o caminho costuma levar cinco anos: primeiro visto, uma renovação e então a residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>). A cidadania vem em geral um ano depois, com Life in the UK test, inglês e boa conduta. A gente mapeia esse caminho com você desde o começo.</p>
-                  <p class="text-size-regular" lang="en" data-lang="en">Yes. For the partner of a British citizen, the path usually takes five years: first visa, one extension, and then permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>). Citizenship usually comes a year later, with the Life in the UK test, English, and good conduct. We map this path with you from the start.</p>
+                  <p class="text-size-regular" data-lang="pt">Sim. Para o parceiro de cidadão britânico, o caminho costuma levar cinco anos: primeiro visto, uma renovação e então a residência permanente (ILR). A cidadania vem em geral um ano depois, com Life in the UK test, inglês e boa conduta. A gente mapeia esse caminho com você desde o começo.</p>
+                  <p class="text-size-regular" lang="en" data-lang="en">Yes. For the partner of a British citizen, the path usually takes five years: first visa, one extension, and then permanent residence (ILR). Citizenship usually comes a year later, with the Life in the UK test, English, and good conduct. We map this path with you from the start.</p>
                 </div></div>
               </div>
             </div>
@@ -6428,8 +6411,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               </div>
               <div class="faq6_answer">
                 <div class="margin-bottom margin-small"><div class="max-width-large">
-                  <p class="text-size-regular" data-lang="pt">Sim. Depois da aprovação do entry clearance, há 30 dias para entrar no país. E as ausências do Reino Unido, acima de 180 dias por ano, podem afetar o caminho até o <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>. A gente acompanha esses prazos com você.</p>
-                  <p class="text-size-regular" lang="en" data-lang="en">Yes. After the entry clearance is approved, there are 30 days to enter the country. And absences from the UK, above 180 days a year, can affect the path to <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>. We track these deadlines with you.</p>
+                  <p class="text-size-regular" data-lang="pt">Sim. Depois da aprovação do entry clearance, há 30 dias para entrar no país. E as ausências do Reino Unido, acima de 180 dias por ano, podem afetar o caminho até o ILR. A gente acompanha esses prazos com você.</p>
+                  <p class="text-size-regular" lang="en" data-lang="en">Yes. After the entry clearance is approved, there are 30 days to enter the country. And absences from the UK, above 180 days a year, can affect the path to ILR. We track these deadlines with you.</p>
                 </div></div>
               </div>
             </div>
@@ -6577,8 +6560,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
       <a href="#" class="gt-artigos_card">
         <div class="gt-artigos_cat" data-lang="pt">Jornada</div>
         <div class="gt-artigos_cat" lang="en" data-lang="en">Journey</div>
-        <h3 data-lang="pt">A jornada até o <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>: o caminho de cinco anos, etapa por etapa</h3>
-        <h3 lang="en" data-lang="en">The journey to <button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>: the five year path, stage by stage</h3>
+        <h3 data-lang="pt">A jornada até o ILR: o caminho de cinco anos, etapa por etapa</h3>
+        <h3 lang="en" data-lang="en">The journey to ILR: the five year path, stage by stage</h3>
         <p data-lang="pt">Entrada, renovação, residência permanente e cidadania. O que esperar em cada fase.</p>
         <p lang="en" data-lang="en">Arrival, extension, permanent residence, and citizenship. What to expect at each stage.</p>
         <span class="gt-artigos_more" data-lang="pt">Ler artigo <i class="ph ph-arrow-right"></i></span>
@@ -7077,7 +7060,7 @@ if (_CountUpLib && 'IntersectionObserver' in window) {
 .lps-benefits_header .text-size-medium { color: #4a5062; margin: 0; font-size: 1.125rem !important; font-weight: 400 !important; line-height: 1.6; font-family: Manrope, sans-serif; font-style: normal; }
 .lps-benefits_header .text-size-medium strong { color: #12193D; }
 .section_lps-benefits .tag { background: rgba(47,204,100,0.12); border-color: rgba(47,204,100,0.28); }
-.section_lps-benefits .tag .tag_text { color: #1A8F44 !important; }
+.section_lps-benefits .tag .tag_text { color: #2FCC64; }
 .section_lps-benefits .tag .tag_dot { background: #2FCC64; }
 .lps-benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .section_lps-benefits .lps-layout3_card { background: #fff; border: 1px solid rgba(18,25,61,0.10); border-radius: 16px; padding: 2rem 1.75rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; box-shadow: 0 4px 18px rgba(18,25,61,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; }
@@ -7115,51 +7098,5 @@ html { scroll-behavior: smooth; }
 @media (max-width: 767px) { .lps-padding-vertical-copy2 { padding-top: 2rem !important; padding-bottom: 2rem !important; } }
 </style>
 
-<style id="pedro-fixes-2026">
-/* ===== Ajustes solicitados por Pedro (22/07/2026, rev.2) ===== */
-
-/* Stats ao lado do form: tudo centralizado (igual GT) */
-.lps-form_content-left .lps-stats_item,
-.lps-form_content-left .lps-stats_item:first-child,
-.lps-form_content-left .lps-stats_item:not(:first-child){align-items:center !important;text-align:center !important;}
-.lps-form_content-left .lps-stats_number,
-.lps-form_content-left .lps-stats_label,
-.lps-form_content-left .lps-stats_desc{text-align:center !important;margin-left:auto !important;margin-right:auto !important;}
-.lps-stats_item{align-items:center !important;text-align:center !important;}
-.lps-stats_divider{margin-left:auto !important;margin-right:auto !important;}
-
-/* highlight multilinha azul (nao existia na RF) */
-.gt-hl-line{background:#004DFF;color:#fff !important;font-weight:600;padding:2px 8px;border-radius:5px;-webkit-box-decoration-break:clone;box-decoration-break:clone;line-height:1.9;}
-
-/* "O que muda quando voces se reunem": fundo claro (header com texto escuro) */
-.section_lps-living.vidauk-section{background:oklch(95.5% 0.02 255) !important;}
-.section_lps-living.vidauk-section::before{display:none !important;}
-.section_lps-living.vidauk-section .living_header .heading-style-h2,
-.section_lps-living.vidauk-section .living_header h2{color:#12193D !important;}
-.section_lps-living.vidauk-section .living_header .text-size-medium,
-.section_lps-living.vidauk-section .living_header p{color:#4a5062 !important;}
-.section_lps-living.vidauk-section .tag_text{color:#12193D !important;}
-.section_lps-living.vidauk-section .tag_dot{background:#004DFF !important;}
-.section_lps-living.vidauk-section .tag{background:rgba(0,77,255,0.08) !important;border-color:rgba(0,77,255,0.18) !important;}
-
-/* Cards de custo: textos alinhados a esquerda (igual GT) */
-.gt-custo_card{text-align:left !important;}
-.gt-custo_card h3,.gt-custo_card > p,.gt-custo_card .gt-custo_eyebrow,.gt-custo_card .gt-custo_note{text-align:left !important;}
-.gt-custo_card .gt-custo_list li{justify-content:flex-start !important;text-align:left !important;}
-
-/* Bloco RISCOS SOB CONTROLE: fundo claro igual "Quanto custa" (#F6F8FC) */
-.gt-riscos{background:#F6F8FC !important;}
-
-/* "A maioria trata...": texto centralizado */
-.section_lps-benefits .lps-benefits_header p{text-align:center !important;margin-left:auto !important;margin-right:auto !important;}
-
-/* Reviews "Historias de quem ja reuniu": fundo branco (igual GT) */
-.section_lps-reviews{background:#FFFFFF !important;}
-
-/* Box "Diferencial Amorim Global": tamanhos normais, sem ficar estranho */
-.section_lps-single-testimonial-copy .heading-14{font-size:1.375rem !important;line-height:1.3 !important;margin-bottom:.75rem !important;color:#12193D !important;}
-.section_lps-single-testimonial-copy .text-block-65{font-size:1rem !important;line-height:1.65 !important;color:#4a5062 !important;}
-.section_lps-single-testimonial-copy .icon-embed-medium-copy{width:48px !important;height:48px !important;}
-</style>
 </body>
 </html>

@@ -4626,7 +4626,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
         </div>
 
       </div>
-      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px;text-align:center;align-items:center;margin-left:auto;margin-right:auto;">
+      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px;text-align:center;align-items:center;">
         <p class="text-size-medium" data-lang="pt">A maioria trata renda mínima, provas do relacionamento e prazos como tarefas soltas. <strong>A Amorim trata tudo como uma decisão só, do começo ao fim, porque é um <span class="gt-hl">hub 360º</span>.</strong></p>
         <p class="text-size-medium" lang="en" data-lang="en">Most treat the minimum income, the relationship evidence, and deadlines as loose tasks. <strong>Amorim treats it all as a single decision, from start to finish, because it is a <span class="gt-hl">360º hub</span>.</strong></p>
       </div>
@@ -7147,11 +7147,15 @@ html { scroll-behavior: smooth; }
 .gt-custo_card h3,.gt-custo_card > p,.gt-custo_card .gt-custo_eyebrow,.gt-custo_card .gt-custo_note{text-align:left !important;}
 .gt-custo_card .gt-custo_list li{justify-content:flex-start !important;text-align:left !important;}
 
-/* Bloco RISCOS SOB CONTROLE: fundo claro igual "Quanto custa" (#F6F8FC) */
-.gt-riscos{background:#F6F8FC !important;}
-
-/* "A maioria trata...": texto centralizado */
-.section_lps-benefits .lps-benefits_header p{text-align:center !important;margin-left:auto !important;margin-right:auto !important;}
+/* Bloco RISCOS SOB CONTROLE: fundo navy igual "hub 360" */
+.gt-riscos{background:#12193D !important;position:relative;overflow:hidden;}
+.gt-riscos::before{content:'';position:absolute;top:-15%;right:-8%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(0,77,255,0.22) 0%,transparent 70%);pointer-events:none;z-index:0;}
+.gt-riscos .gt-riscos_inner{position:relative;z-index:1;}
+.gt-riscos_head .tag{background:rgba(255,255,255,0.12) !important;border-color:rgba(255,255,255,0.25) !important;}
+.gt-riscos_head .tag_text{color:#fff !important;}
+.gt-riscos_head .tag_dot{background:rgba(255,255,255,0.6) !important;}
+.gt-riscos_head h2{color:#fff !important;}
+.gt-riscos_head p{color:rgba(255,255,255,0.8) !important;}
 
 /* Reviews "Historias de quem ja reuniu": fundo branco (igual GT) */
 .section_lps-reviews{background:#FFFFFF !important;}
